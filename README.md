@@ -1,42 +1,32 @@
-# 💼 Jobs Report Analysis
+#  📊 Jobs Analysis
 
-This repository contains my exploratory data analysis (EDA) on job market trends, skills in demand, and salary insights based on multiple data sources. The project uses **SQL for analysis** and **Power BI** for data visualization.
+This repository contains my exploratory data analysis on job market trends, skills in demand, and salary insights based on multiple data sources. The project uses **SQL for analysis** and **Power BI** for data visualization.
 
 ---
 
 ## 📁 Folder Structure
-- .csv File: Contains CSV results of SQL queries
-- Images: Contains screenshots of SQL results and visualizations
-- Jobs-Report: Contains SQL code used for querying and analysis
+- **.csv File:** Contains CSV results of SQL queries
+- **Images:** Contains screenshots of SQL results and visualizations
+- **Jobs-Report:** Contains SQL code used for querying and analysis
 
 ---
 
 ## 📌 Introduction
 
-In this project, I analyzed various aspects of the global job market including:
-
-- Most in-demand skills across industries
-- Top-paying companies
-- Remote-friendly skillsets
-- High-paying and high-demand roles
-- Skills that consistently generate higher salaries
-
-The goal is to extract actionable insights that can guide professionals, students, or career-switchers in making smarter decisions about their skill development paths.
+Dive into the data jobs market! Focusing on data analyst roles, this project explores top-paying jobs, in-demand skills, and where high demand meets high salary in data analytics.
 
 ---
 
 ## 📚 Background
 
-As the world of work continues to evolve with rapid technological advancements, understanding **which skills are most valued** and **which companies pay the most** has become crucial for career planning.
+Driven by a quest to navigate the data analyst job market more efficiently, this project was born from a desire to pinpoint top-paying and in-demand skills—streamlining the job search process for others seeking optimal opportunities.
 
-This analysis is driven by the following key questions:
-
-- What are the most in-demand skills in the job market?
-- Which skills are best suited for remote work?
-- Which companies pay the highest average salaries?
-- What are the best skill combinations for long-term growth?
-
----
+### The questions I aimed to answer through my SQL queries were:
+1. Which companies offer the highest salaries for data analyst roles?
+2. What skills are most commonly required by those companies?
+3. What skills are in highest demand for data analyst positions overall?
+4. Which skills are associated with the highest salaries?
+5. What are the most optimal skills to learn for aspiring data analysts?
 
 ## 🛠 Tools I Used
 
@@ -48,17 +38,74 @@ This analysis is driven by the following key questions:
 ---
 
 ## 📊 The Analysis
+Each query for this project aimed at investigating specific aspects of data analyst job market. 
+Here's how I approach each question:
 
-Here are the key questions I explored through this project:
+### **1. Top 10 Companies**
+To identify the top companies offering the highest-paying remote data analyst positions, I filtered job postings by average yearly salary and selected only those marked as remote (`job_work_from_home = True`). The resulting query highlights the top 10 companies with the most competitive salaries for data analyst roles.
 
-1. **What are the most in-demand skills across industries?**
-2. **Which skills are most in-demand for remote jobs?**
-3. **What are the top-paying, high-demand skills?**
-4. **Which companies offer the highest average salaries?**
-5. **Which technical skills are the most financially rewarding?**
+```sql
+SELECT 
+    d.name,
+    f.job_schedule_type,
+    f.job_posted_date::DATE,
+    f.salary_year_avg AS totals
+FROM 
+    job_postings_fact AS f
+INNER JOIN 
+    company_dim AS d
+USING (company_id)
+WHERE 
+    job_title_short = 'Data Analyst'
+    AND salary_year_avg IS NOT NULL
+    AND job_work_from_home = TRUE
+ORDER BY 
+    totals DESC
+LIMIT 10;
+```
+---
 
-Each question is answered through SQL analysis and visualized using Power BI for clear interpretation.
+### **2. Skills Required by Top Companies**
 
+To identify the most commonly required skills by companies offering high-paying remote data analyst roles, I applied the same filtering method as in the previous query—focusing on remote jobs with available salary data. This time, I expanded the query by joining additional tables to extract and aggregate the specific skills associated with those job postings.  
+
+By joining the job postings with the corresponding skill data, the query reveals the top 10 most frequently requested skills among companies that offer competitive salaries for data analyst positions. This insight can help job seekers prioritize which skills to learn or improve based on actual market demand.
+
+```sql
+WITH skills_demand AS (
+    SELECT 
+        f.job_id,
+        d.name,
+        f.job_schedule_type,
+        f.job_posted_date::DATE,
+        f.salary_year_avg AS totals
+    FROM 
+        job_postings_fact AS f
+    INNER JOIN 
+        company_dim AS d
+    USING (company_id)
+    WHERE 
+        job_title_short = 'Data Analyst'
+        AND salary_year_avg IS NOT NULL
+        AND job_work_from_home = TRUE
+)
+SELECT
+    d2.skills,
+    COUNT(f.job_id) AS total
+FROM 
+    skills_demand AS f
+INNER JOIN 
+    skills_job_dim AS d
+USING (job_id)
+INNER JOIN 
+    skills_dim AS d2 
+    ON d.skill_id = d2.skill_id
+GROUP BY
+    d2.skills
+ORDER BY 
+    total DESC
+LIMIT 10;
+```
 ---
 
 ## 🔍 What I Learned
