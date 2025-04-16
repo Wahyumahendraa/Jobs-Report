@@ -63,12 +63,102 @@ Each question is answered through SQL analysis and visualized using Power BI for
 
 ## 🔍 What I Learned
 
-From the analysis, I uncovered several key insights:
+### 📌 1. **Most In-Demand Skills |Data Analyst - Remote**
+These are the skills that are **widely sought-after across industries**, including both tech and non-tech roles.
 
-- **Data & Tech Skills Dominate**: Skills like AI/ML, cloud computing, and software development are consistently in high demand.
-- **Remote Work Has Its Own Niche**: Skills like copywriting, digital marketing, web development, and virtual assistance are highly valued in remote jobs.
-- **The Power of Specialization**: Niche technical skills such as Go (Golang), Rust, and Solidity offer some of the highest salaries in tech.
-- **FAANG and Beyond**: Companies like Netflix, Meta, and Google offer top compensation, particularly for roles in engineering and data science.
+**Top Skills:**
+- **Data Analysis**
+- **Software Development**
+- **Cloud Computing**
+- **Project Management**
+- **Sales & Digital Marketing**
+- **AI/Machine Learning**
+
+**Insight:**
+If you're entering or transitioning careers, **Data + Tech + Management** is the golden triangle. These skills apply in almost any modern company.
+
+![Jobs-Report](Images/most_demand_skills_remote.png)
+
+---
+
+### 🌍 2. **Most In-Demand Remote Skills | Data Analayst - All Locations** 
+These are the most valued skills in **remote or freelancing roles**.
+
+**Top Remote-First Skills:**
+- **Web Development**
+- **Graphic Design & UX/UI**
+- **Copywriting & SEO**
+- **Virtual Assistance**
+- **Social Media Management**
+- **Customer Support**
+- **Data Entry**
+
+**Insight:**
+These are perfect for digital nomads or anyone aiming to earn online. If you want fast entry and flexibility, combine a **creative or marketing skill** with **client management tools**.
+
+![Jobs-Report](Images/most_demand_skills_all.png)
+---
+
+### 💼 3. **High Pay + High Demand Skills | Data Analayst - Remote**
+These skills are **not only in high demand but also pay very well**.
+
+**Top Tier Combos:**
+- **AI/Machine Learning**
+- **Cybersecurity**
+- **Cloud Architecture**
+- **Data Science**
+- **Software Engineering**
+
+**Insight:**
+This is the sweet spot: **future-proof + income-boosting**. If you’re willing to commit to a 6–12 month learning path, these are ideal for long-term ROI.
+
+![Jobs-Report](Images/most_pay_most_demand.png)
+---
+
+### 🏢 4. **Top Paying Companies | Data Analayst - Remote** 
+
+**Top Companies:**
+- **Netflix**
+- **Meta**
+- **Google**
+- **Apple**
+- **LinkedIn**
+- **Amazon**
+- **Salesforce**
+
+**Average Salary Range:** $140k – $200k+
+
+**Insight:**
+These companies focus heavily on **AI, cloud, and engineering** roles. Aligning your skills with their tech stacks and company culture can significantly boost your career.
+
+![Jobs-Report](Images/top_paying_company.png)
+---
+
+### 💸 5. **Skills That Pay the Most | Data Analyst - In General** 
+
+**Top Paying Skills:**
+- **Go (Golang)**
+- **Rust**
+- **Solidity (Blockchain)**
+- **Kubernetes**
+- **Machine Learning**
+- **Cloud Infrastructure (AWS, Azure)**
+
+**Insight:**
+If you're looking for **niche + highly paid** skills, this is where to look. These often have fewer experts globally, giving you a competitive edge if you specialize.
+
+![Jobs-Report](Images/top_salary_skills.png)
+---
+
+### 🚀 Summary: What Should You Do?
+
+| Your Goal                          | Recommended Skill Path                                           |
+|-----------------------------------|------------------------------------------------------------------|
+| Earn fast with remote work        | Web dev + Copywriting/SEO + Client Tools                        |
+| Build long-term, high-income path | ML/AI + Cloud + Programming (Go, Rust, Solidity)                |
+| Creative freelancer               | UI/UX + Motion Graphics + Digital Marketing                     |
+| Safe pivot into digital career    | Project Mgmt + Data Analysis + Soft Skills                      |
+| Aim for FAANG-level job           | CS Fundamentals + System Design + Leetcode + Niche Tech Skills  |
 
 ---
 
