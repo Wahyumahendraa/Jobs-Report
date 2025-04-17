@@ -260,41 +260,40 @@ LIMIT 10;
 ---
 
 ## 🔍 What I Learned
+The following section presents the results of my analysis along with key insights derived from the five core questions explored throughout this project. Each question was carefully examined using targeted SQL queries to uncover trends in salary, skill demand, and employer preferences within the data analyst job market—particularly for remote roles. By breaking down these findings, I aim to provide a clearer understanding of what companies are offering the most competitive salaries, which technical skills are most sought after, and how these skills align with higher earning potential. These insights can serve as a valuable reference for job seekers looking to strategically position themselves in a competitive and evolving industry.
 
-### 📌 1. **Most In-Demand Skills |Data Analyst - Remote**
-These are the skills that are **widely sought-after across industries**, including both tech and non-tech roles.
+### 🏢 1. **Top Paying Companies | Data Analayst - Remote** 
 
-**Top Skills:**
-- **Data Analysis**
-- **Software Development**
-- **Cloud Computing**
-- **Project Management**
-- **Sales & Digital Marketing**
-- **AI/Machine Learning**
+From this analysis, we can observe that the highest-paying companies for remote data analyst roles are major tech giants such as Netflix, Meta, Google, and Apple. These companies typically operate at the forefront of innovation in areas like **artificial intelligence, cloud computing, and data-driven engineering**. The strong emphasis on technology and data infrastructure likely drives their demand for skilled analysts and justifies the high salary range of **$140k to over $200k**.  
 
-**Insight:**
-If you're entering or transitioning careers, **Data + Tech + Management** is the golden triangle. These skills apply in almost any modern company.
+By examining this trend, we can understand that aligning our skill sets with the **technological needs and analytical maturity** of such companies—particularly in tools and domains relevant to big data, business intelligence, and automation—may increase our chances of securing high-paying opportunities. Additionally, it highlights the value placed on data talent in environments where decision-making is deeply rooted in insights and performance metrics.
+
+![Jobs-Report](Images/top_paying_company.png)
+
+---
+
+### 📊 **2. Most Demand Skills | Data Analyst - Remote**
+ 
+From this chart, we can clearly observe that **SQL** stands out as the most demanded tool by a wide margin, followed by **Excel**, **Python**, and **Tableau**—all of which are core to data wrangling, analysis, and visualization. These tools form the backbone of everyday tasks for most data analysts, especially in remote settings where self-sufficiency and versatile skills are crucial.
+
+Interestingly, tools like **R**, **SAS**, and **Power BI** sit just around or below the median line, indicating that while they are still relevant, they are more specialized and potentially company-specific. On the lower end, tools like **PowerPoint**, **Looker**, and **Word** appear less frequently, suggesting they are more supplementary rather than central to the analyst role.
+
+These findings align well with previous insights where we noted that companies highly value technical skills and business alignment. From here, we understand that focusing on core tools like **SQL, Excel, Python, and Tableau** provides a strong foundation to meet most employer demands in the current job market for remote data analysts.
 
 ![Jobs-Report](Images/most_demand_skills_remote.png)
 
 ---
 
-### 🌍 2. **Most In-Demand Remote Skills | Data Analayst - All Locations** 
-These are the most valued skills in **remote or freelancing roles**.
+### 📊 **3. Most Demand Skills | Data Analyst - All Locations**
 
-**Top Remote-First Skills:**
-- **Web Development**
-- **Graphic Design & UX/UI**
-- **Copywriting & SEO**
-- **Virtual Assistance**
-- **Social Media Management**
-- **Customer Support**
-- **Data Entry**
+This chart reinforces the dominant position of **SQL**, with a significant lead at **93K** mentions—making it the most critical skill across locations. **Excel**, **Python**, and **Tableau** also maintain strong demand, further highlighting their consistent value in data analyst roles regardless of geography.
 
-**Insight:**
-These are perfect for digital nomads or anyone aiming to earn online. If you want fast entry and flexibility, combine a **creative or marketing skill** with **client management tools**.
+What’s interesting here is that **Power BI**, while slightly below the average line, still ranks ahead of more statistically inclined tools like **R** and **SAS**, suggesting a higher emphasis on dashboarding and business intelligence tools in the broader market. Meanwhile, **PowerPoint**, **Word**, and **SAP** sit at the bottom, reflecting their role as supporting or domain-specific tools rather than core data analysis instruments.
+
+Overall, this chart tells us that the global demand closely mirrors the remote job market, reaffirming the universal importance of a solid stack—**SQL, Excel, Python, Tableau**—for anyone looking to break into or grow within data analytics.
 
 ![Jobs-Report](Images/most_demand_skills_all.png)
+
 ---
 
 ### 💼 3. **High Pay + High Demand Skills | Data Analayst - Remote**
@@ -313,24 +312,6 @@ This is the sweet spot: **future-proof + income-boosting**. If you’re willing 
 ![Jobs-Report](Images/most_pay_most_demand.png)
 ---
 
-### 🏢 4. **Top Paying Companies | Data Analayst - Remote** 
-
-**Top Companies:**
-- **Netflix**
-- **Meta**
-- **Google**
-- **Apple**
-- **LinkedIn**
-- **Amazon**
-- **Salesforce**
-
-**Average Salary Range:** $140k – $200k+
-
-**Insight:**
-These companies focus heavily on **AI, cloud, and engineering** roles. Aligning your skills with their tech stacks and company culture can significantly boost your career.
-
-![Jobs-Report](Images/top_paying_company.png)
----
 
 ### 💸 5. **Skills That Pay the Most | Data Analyst - In General** 
 
