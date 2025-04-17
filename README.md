@@ -38,8 +38,9 @@ Driven by a quest to navigate the data analyst job market more efficiently, this
 ---
 
 ## 📊 The Analysis
-Each query for this project aimed at investigating specific aspects of data analyst job market. 
-Here's how I approach each question:
+Each SQL query in this project was designed to explore specific aspects of the data analyst job market. The goal was to uncover insights that can help job seekers better understand which companies offer the best opportunities, which skills are most in demand, and which ones are associated with higher salaries—especially for remote roles.
+
+Here's how I approached each question:
 
 ### **1. Top 10 Companies**
 To identify the top companies offering the highest-paying remote data analyst positions, I filtered job postings by average yearly salary and selected only those marked as remote (`job_work_from_home = True`). The resulting query highlights the top 10 companies with the most competitive salaries for data analyst roles.
@@ -104,6 +105,156 @@ GROUP BY
     d2.skills
 ORDER BY 
     total DESC
+LIMIT 10;
+```
+---
+
+### **3. Most In-Demand Skills Across All Locations**
+
+To determine which skills are most in demand for data analyst roles across all job locations—not just remote—I broadened the scope of the filtering criteria. In this query, I selected all data analyst job postings regardless of location, allowing for a more comprehensive view of the skills that employers are consistently looking for in the market as a whole.
+
+By joining job posting data with associated skill data, the query identifies the top 10 most frequently mentioned skills in job listings. The result highlights that **SQL, Excel, Python, Tableau, and Power BI** are among the most sought-after skills for data analysts across the industry.  
+
+This insight is especially valuable for professionals who want to remain competitive in the broader job market, regardless of whether they prefer on-site, hybrid, or remote work settings.
+
+```sql
+WITH skills_demand AS (
+    SELECT 
+        f.job_id,
+        d.name,
+        f.job_schedule_type,
+        f.job_posted_date::DATE,
+        f.salary_year_avg AS totals
+    FROM 
+        job_postings_fact AS f
+    INNER JOIN 
+        company_dim AS d
+    USING (company_id)
+    WHERE 
+        job_title_short = 'Data Analyst'
+)
+SELECT
+    d2.skills,
+    COUNT(f.job_id) AS total
+FROM 
+    skills_demand AS f
+JOIN 
+    skills_job_dim AS d
+USING (job_id)
+INNER JOIN 
+    skills_dim AS d2 
+    ON d.skill_id = d2.skill_id
+GROUP BY
+    d2.skills
+ORDER BY 
+    total DESC
+LIMIT 10;
+```
+
+---
+
+### **4. Top-Paying Skills for Remote Data Analyst Roles**
+
+In this analysis, I focused on identifying the **top 25 highest-paying skills** associated with remote data analyst positions. By filtering the job postings dataset to include only roles titled *Data Analyst* that are fully remote (`job_work_from_home = TRUE`) and have a specified average annual salary, I was able to calculate the average salary linked to each individual skill.
+
+The query joins job data with skill data to determine which skills are most valuable in terms of compensation. The results represent the top 25 skills that yield the highest average salaries, providing clear guidance for professionals aiming to maximize their earning potential in remote data analyst roles.
+
+```sql
+SELECT
+    d2.skills,
+    ROUND(
+        AVG(f.salary_year_avg)::NUMERIC, 0
+    ) AS salary_average
+FROM
+    job_postings_fact AS f
+INNER JOIN 
+    skills_job_dim AS d
+USING (job_id)
+INNER JOIN
+    skills_dim AS d2 ON d.skill_id = d2.skill_id
+WHERE
+    job_title_short = 'Data Analyst'
+    AND salary_year_avg IS NOT NULL
+    AND job_work_from_home = TRUE
+GROUP BY 
+    d2.skills
+ORDER BY
+    salary_average DESC
+LIMIT 25;
+```
+---
+
+### **5. High-Demand and High-Paying Skills for Remote Data Analyst Roles**
+
+This analysis aims to identify skills that are both **highly demanded** and **well-compensated** within remote data analyst job postings. By combining data on skill demand and average salary, we can pinpoint the most valuable skills for professionals seeking to optimize their career in the data analytics field—especially in remote work settings.
+
+To do this, I applied filters for:
+- Job title: *Data Analyst*
+- Remote positions only (`job_work_from_home = TRUE`)
+- Postings with available average annual salary data
+
+The query is structured in two parts:
+1. **`skills_demand`**: Calculates how frequently each skill appears in remote data analyst postings, giving us a measure of demand.
+2. **`salary_average`**: Computes the average salary associated with each skill from those same filtered postings.
+
+These two subqueries are then joined to provide a combined view, showing the top 10 skills that strike the best balance between **market demand** and **earning potential**.
+
+```sql
+WITH skills_demand AS (
+    SELECT
+        d2.skill_id,
+        d2.skills,
+        COUNT(f.job_id) AS total
+    FROM
+        job_postings_fact AS f
+    INNER JOIN 
+        skills_job_dim AS d
+    USING (job_id) 
+    INNER JOIN 
+        skills_dim AS d2 ON d.skill_id = d2.skill_id
+    WHERE 
+        job_title_short = 'Data Analyst'
+        AND job_work_from_home = TRUE
+        AND salary_year_avg IS NOT NULL
+    GROUP BY 
+        d2.skill_id, d2.skills
+),
+salary_average AS (
+    SELECT
+        d2.skill_id,
+        d2.skills,
+        ROUND(
+            AVG(f.salary_year_avg)::NUMERIC, 0
+        ) AS salary_average
+    FROM
+        job_postings_fact AS f
+    INNER JOIN 
+        skills_job_dim AS d
+    USING (job_id)
+    INNER JOIN
+        skills_dim AS d2 ON d.skill_id = d2.skill_id
+    WHERE
+        job_title_short = 'Data Analyst'
+        AND job_work_from_home = TRUE
+        AND salary_year_avg IS NOT NULL
+    GROUP BY 
+        d2.skill_id, d2.skills
+)
+SELECT
+    f.skills,
+    SUM(f.total) AS demand,
+    ROUND(
+        AVG(d.salary_average)::NUMERIC, 0
+    ) AS salary 
+FROM 
+    skills_demand AS f
+INNER JOIN 
+    salary_average AS d
+USING (skill_id)
+GROUP BY 
+    f.skills
+ORDER BY
+    demand DESC
 LIMIT 10;
 ```
 ---
