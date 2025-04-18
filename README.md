@@ -262,11 +262,14 @@ LIMIT 10;
 ## 🔍 What I Learned
 The following section presents the results of my analysis along with key insights derived from the five core questions explored throughout this project. Each question was carefully examined using targeted SQL queries to uncover trends in salary, skill demand, and employer preferences within the data analyst job market—particularly for remote roles. By breaking down these findings, I aim to provide a clearer understanding of what companies are offering the most competitive salaries, which technical skills are most sought after, and how these skills align with higher earning potential. These insights can serve as a valuable reference for job seekers looking to strategically position themselves in a competitive and evolving industry.
 
+---
+
 ### 🏢 1. **Top Paying Companies | Data Analayst - Remote** 
 
 From this analysis, we can observe that the highest-paying companies for remote data analyst roles are major tech giants such as Netflix, Meta, Google, and Apple. These companies typically operate at the forefront of innovation in areas like **artificial intelligence, cloud computing, and data-driven engineering**. The strong emphasis on technology and data infrastructure likely drives their demand for skilled analysts and justifies the high salary range of **$140k to over $200k**.  
 
 By examining this trend, we can understand that aligning our skill sets with the **technological needs and analytical maturity** of such companies—particularly in tools and domains relevant to big data, business intelligence, and automation—may increase our chances of securing high-paying opportunities. Additionally, it highlights the value placed on data talent in environments where decision-making is deeply rooted in insights and performance metrics.
+
 
 ![Jobs-Report](Images/top_paying_company.png)
 
@@ -280,6 +283,7 @@ Interestingly, tools like **R**, **SAS**, and **Power BI** sit just around or be
 
 These findings align well with previous insights where we noted that companies highly value technical skills and business alignment. From here, we understand that focusing on core tools like **SQL, Excel, Python, and Tableau** provides a strong foundation to meet most employer demands in the current job market for remote data analysts.
 
+
 ![Jobs-Report](Images/most_demand_skills_remote.png)
 
 ---
@@ -292,65 +296,49 @@ What’s interesting here is that **Power BI**, while slightly below the average
 
 Overall, this chart tells us that the global demand closely mirrors the remote job market, reaffirming the universal importance of a solid stack—**SQL, Excel, Python, Tableau**—for anyone looking to break into or grow within data analytics.
 
+
 ![Jobs-Report](Images/most_demand_skills_all.png)
 
 ---
 
-### 💼 3. **High Pay + High Demand Skills | Data Analayst - Remote**
-These skills are **not only in high demand but also pay very well**.
+### 💸 4. **Skills That Pay the Most | Data Analyst - In General** 
 
-**Top Tier Combos:**
-- **AI/Machine Learning**
-- **Cybersecurity**
-- **Cloud Architecture**
-- **Data Science**
-- **Software Engineering**
+The Top salary chart shows that advanced and specialized tools or platforms command significantly higher salaries. Pyspark leads the chart at 208K, which aligns with its growing demand in big data processing. Similarly, Bitbucket and Watson—often associated with DevOps and AI—are also highly valued.
 
-**Insight:**
-This is the sweet spot: **future-proof + income-boosting**. If you’re willing to commit to a 6–12 month learning path, these are ideal for long-term ROI.
+What’s notable is the presence of many tools typically associated with data engineering, machine learning, or AI development (e.g., Pyspark, Golang, Databricks, Airflow, Scikit-Learn, Jupyter, Pandas, and Kubernetes). This signals that data analyst roles demanding these higher-end, hybrid skill sets (bordering data science or MLOps) tend to be compensated more generously.
 
-![Jobs-Report](Images/most_pay_most_demand.png)
----
+While foundational tools like Pandas and Numpy also appear here, their salary range is closer to the average line—showing that depth in these tools might increase salary but not as drastically as mastering higher-complexity platforms.
 
-
-### 💸 5. **Skills That Pay the Most | Data Analyst - In General** 
-
-**Top Paying Skills:**
-- **Go (Golang)**
-- **Rust**
-- **Solidity (Blockchain)**
-- **Kubernetes**
-- **Machine Learning**
-- **Cloud Infrastructure (AWS, Azure)**
-
-**Insight:**
-If you're looking for **niche + highly paid** skills, this is where to look. These often have fewer experts globally, giving you a competitive edge if you specialize.
 
 ![Jobs-Report](Images/top_salary_skills.png)
+
 ---
+
+### 💼 5. **High Pay + High Demand Skills | Data Analayst - Remote**
+In the world of remote data analyst roles, **SQL reigns supreme** as the most in-demand skill by a wide margin—appearing in nearly 400 job postings. It's the essential foundation that almost every company expects, and with a respectable average salary of **$97K**, it's both practical and rewarding. Surprisingly, **Excel** comes in second in demand, but its salary drops to **$87K**, hinting that it's often associated with entry-level or less technical roles. Meanwhile, **Python**, a powerful coding language, offers a much better salary at **$101K** despite slightly lower demand. It’s clear: if you're looking for income and job security, mastering **SQL and Python** is a smart move.
+
+On the other end of the spectrum, **Looker** might not show up in many job posts (only 49), but it offers the **highest salary at $104K**. It's a specialized tool, likely used in companies that heavily rely on the Google Cloud stack. Similarly, tools like **R**, **Tableau**, and **SAS** offer strong salary potential (ranging from **$97K to $100K**) with moderate demand—ideal for analysts looking to climb higher in niche or data science-heavy environments.
+
+In contrast, tools like **Word** and **PowerPoint** appear at the bottom both in demand and salary. They’re good to have, but not game-changers. The sweet spot for aspiring analysts lies in combining **high-demand tools** like SQL and Python with **higher-paying niche skills** like Looker or SAS. That blend makes you not only employable—but highly valuable.
+
+
+![Jobs-Report](Images/most_pay_most_demand.png)
+
+
+---
+
 
 ### 🚀 Summary: What Should You Do?
 
-| Your Goal                          | Recommended Skill Path                                           |
-|-----------------------------------|------------------------------------------------------------------|
-| Earn fast with remote work        | Web dev + Copywriting/SEO + Client Tools                        |
-| Build long-term, high-income path | ML/AI + Cloud + Programming (Go, Rust, Solidity)                |
-| Creative freelancer               | UI/UX + Motion Graphics + Digital Marketing                     |
-| Safe pivot into digital career    | Project Mgmt + Data Analysis + Soft Skills                      |
-| Aim for FAANG-level job           | CS Fundamentals + System Design + Leetcode + Niche Tech Skills  |
+In the realm of data analysis, **PySpark leads as the top-paying skill**, offering an impressive **$208K**, followed by **Bitbucket** and **Couchbase**, making it clear that cloud-based and engineering-heavy tools command the highest salaries. However, in remote roles, the most *in-demand* skills shift toward practicality—**SQL and Excel** dominate job listings, while **Python**, **Tableau**, and **R** strike a strong balance between salary and demand. Tools like **Looker**, **SAS** and **Power BI**, although less common, offer premium salaries, revealing that niche expertise can be a secret weapon for income growth. Meanwhile, general tools like **PowerPoint** and **Word** are the least valuable in terms of salary and demand. Master core tools like **SQL, Excel and Python** for wide job access, then layer in high-paying niche tools like **Looker or PySpark** to boost your market value.
 
 ---
 
 ## ✅ Conclusion
 
-This project confirms the growing need for:
+This project set out to better understand the current landscape of data analyst jobs by focusing on two key factors: which skills are in highest demand and which offer the best salary potential. With so many options available, job seekers often struggle to know which skills to focus on. By analyzing real job market data, this project provides clear insights into what companies are looking for and what they are willing to pay top dollar for.
 
-- **Technical fluency** in modern tools and platforms
-- **Adaptability**, especially in remote-first environments
-- **Strategic upskilling** in emerging and niche fields
+Through a series of SQL-driven explorations, I answered five core questions about top-paying companies, the most commonly required and high-paying skills, and the overlap between demand and compensation. The goal was to simplify the job search process for aspiring data analysts by identifying the most strategic and valuable skills to learn—helping them target opportunities that are both in high demand and financially rewarding.
 
-Whether you're starting out, pivoting careers, or aiming for top tech companies, understanding market trends through data can help you make smarter, evidence-based decisions.
 
----
-
-Thank you for checking out this analysis! Feel free to fork this project or reach out if you'd like to collaborate or give feedback. 🚀
+Thank you for checking out this analysis! 
